@@ -20,7 +20,7 @@ public class BrightnessRegulator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // タグによって光らせる色を変える       (なんでこれStartに記述すんの？ 全部の条件通過してるとしたら　SmallStarTag.defaultColor = Color.white; とかじゃダメなの？)
+        // タグによって光らせる色を変える
         if(tag == "SmallStarTag"){
             this.defaultColor = Color.white;
         }
@@ -34,7 +34,7 @@ public class BrightnessRegulator : MonoBehaviour
         // オブジェクトにアタッチしているMaterialを取得
         this.myMaterial = GetComponent<Renderer>().material;
         // オブジェクトの最初の色を設定
-        myMaterial.SetColor("_EmissionColor",this.defaultColor*minEmission);      //なんでカラーにエミッションの最小値を乗算してるの？  あー、255に0.3掛けてるってこと？
+        myMaterial.SetColor("_EmissionColor",this.defaultColor*minEmission);
     }
 
     // Update is called once per frame
